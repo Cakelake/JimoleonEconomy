@@ -2,7 +2,7 @@ JimmoleonBankUI = JimmoleonBankUI or {}
 
 local selectedValuable = nil
 
-local depositValuables = {
+JimmoleonBankUI.depositValuables = {
     { name = "Cash", itemType = "Base.Money", value = 1 },
     { name = "Silver Coin", itemType = "Base.SilverCoin", value = 25 },
     { name = "Gold Coin", itemType = "Base.GoldCoin", value = 100 },
@@ -118,12 +118,12 @@ function JimmoleonBankUI.openDeposit(pl)
 
     valuableCombo:initialise()
 
-    for _, valuable in ipairs(depositValuables) do
+    for _, valuable in ipairs(JimmoleonBankUI.depositValuables) do
         valuableCombo:addOptionWithData(valuable.name, valuable)
     end
 
     valuableCombo.selected = 1
-    selectedValuable = depositValuables[1]
+    selectedValuable = JimmoleonBankUI.depositValuables[1]
 
     window:addChild(valuableCombo)
 
